@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/userCenter/userCenter",
+        "pages/carpool/carpool",
+        "pages/userEdit/userEdit",
+        "pages/myCarpool/myCarpool",
+        "pages/myCollect/myCollect",
+        "pages/detail/detail",
+        "pages/editCarpool/editCarpool",
+        "pages/search/search"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "拼车车",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "color": "#ccc",
+        "selectedColor": "#000",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/home_gray.png",
+                "selectedIconPath": "./images/home_black.png"
+            },
+            {
+                "pagePath": "pages/search/search",
+                "text": "搜索",
+                "iconPath": "./images/search_gray.png",
+                "selectedIconPath": "./images/search_black.png"
+            },
+            {
+                "pagePath": "pages/userCenter/userCenter",
+                "text": "用户中心",
+                "iconPath": "./images/user_gray.png",
+                "selectedIconPath": "./images/user_black.png"
+            }
+        ]
+    }
+}

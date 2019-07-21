@@ -1,0 +1,38 @@
+<view class="container">
+    <view style="height:1px"></view>
+    
+    <view class="sim-order"  bindtap="editOrder" data-id="{{item.id}}" wx:for="{{myOrderList.list}}" wx:key="wx:key">
+        <view class="sim-order-header">
+            <label class="sim-label color-success" wx:if="{{item.type == 1}}">找车</label>
+            <label class="sim-label color-info" wx:if="{{item.type == 2}}">找人</label>
+            <text style='padding-left:10px;'>{{item.title}}</text>
+        </view>
+        <view class="sim-order-list">
+            
+            <view class='city_row'>
+                <view>
+                    <view>
+                        <text class="fa fa-building"></text>
+                        {{item.starCity}}
+                    </view>
+                </view>
+                <view>
+                    <view class="fa fa-arrow-right"></view>
+                </view>
+                <view>
+                    <view>
+                        <text class="fa fa-home"></text>
+                        {{item.destCity}}
+                    </view>
+                </view>
+                <view>
+                    <view>
+                        <text class="fa fa-calendar"></text>
+                        {{item.departureTime}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  
+</view>

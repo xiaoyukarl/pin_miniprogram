@@ -1,0 +1,39 @@
+@import "simui/simui.wxss";
+
+.container {
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+.avatar{
+    border-radius:50%;
+    width:25px;
+    height:25px;
+}
+.avatar_45{
+    border-radius:50%;
+    width:45px;
+    height:45px;
+}
+.city_row > view{
+    flex-direction:column;
+    display:flex;
+    height:50rpx;
+    justify-content:space-between;
+    align-items:center;
+}
+.city_row > view>view{
+    float:left;
+    display:initial;
+}
+.max_content{
+    max-width: 260px;
+}
+.upload_img{
+    height:80px;
+    width:80px;
+}
+
+.sim-order-header {
+    justify-content : flex-start !important;
+}

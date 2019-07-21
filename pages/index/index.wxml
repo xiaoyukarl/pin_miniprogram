@@ -1,0 +1,73 @@
+<!--pages/home/home.wxml-->
+
+
+<view class="container">
+
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banners}}"  wx:key="wx:key">
+            <swiper-item>
+                <image src="{{item.imgUrl}}" mode="aspectFit" class="slide-image" style="height:100%;width:100%;"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="sim-nav sim-nav-col-2">
+        <view class="sim-nav-item"  bindtap="navigateTo" data-url="../carpool/carpool?type=1">
+        <text class="fa fa-car color-success text-white" style='width:44px;height:39px;'></text>
+        <text>找车</text>
+        </view>
+        <view class="sim-nav-item"  bindtap="navigateTo" data-url="../carpool/carpool?type=2">
+        <text class="fa fa-user color-info text-white" style='width:44px;height:39px;'></text>
+        <text>找人</text>
+        </view>
+    </view>
+
+    <view style="height:10px;"></view>
+    <view class="sim-order"  bindtap="detail" data-id="{{item.id}}" wx:for="{{ordersPage.list}}" wx:key="wx:key">
+        <view class="sim-order-header">
+            <label class="sim-label color-success" wx:if="{{item.type == 1}}">找车</label>
+            <label class="sim-label color-info" wx:if="{{item.type == 2}}">找人</label>
+            <text style='padding-left:10px;'>{{item.title}}</text>
+        </view>
+        <view class="sim-order-list">
+            <view>
+                <image src="{{item.imgUrl}}" ></image>
+                <view class='max_content'>
+                    <text>{{item.content}}</text>
+                </view>
+            </view>
+            <view class='city_row'>
+                <view>
+                    <view>
+                        <text class="fa fa-building"></text>
+                        {{item.starCity}}
+                    </view>
+                </view>
+                <view>
+                    <view class="fa fa-arrow-right"></view>
+                </view>
+                <view>
+                    <view>
+                        <text class="fa fa-home"></text>
+                        {{item.destCity}}
+                    </view>
+                </view>
+                <view>
+                    <view>
+                        <text class="fa fa-calendar"></text>
+                        {{item.departureTime}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="sim-row">
+            <view class="sim-nav-item">
+                <image class="avatar" src="{{item.avatarUrl}}"></image>
+                <text>{{item.username}}</text>
+            </view> 
+            <text class="text-info">{{item.telephone}}</text>
+        </view>
+    </view>
+
+</view>
+  

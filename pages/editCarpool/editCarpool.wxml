@@ -1,0 +1,54 @@
+<view class="container">
+    <view style="height:20px"></view>
+    <view class="sim-form">
+        <view class="sim-form-group">
+        <label>标题</label>
+        <input bindinput="bindTitleChange" maxlength="20" placeholder="如：广州回梅州有没有一起的啊" value="{{postData.title}}"/>
+        </view>
+        <view class="sim-form-group">
+        <label>联系方式</label>
+        <input bindinput="bindTelChange" maxlength="11" placeholder="手机号" value="{{postData.telephone}}"/>
+        </view>
+        <view class="sim-form-group">
+        <label>出发城市</label>
+        <picker bindchange="bindStarCityChange" value="{{index}}" range="{{city}}">
+            <view class="picker">
+            <text wx:if="{{postData.starCity}}">{{postData.starCity}}</text>
+            <text wx:else>请选择</text>
+            <text class="sim-arrow-bottom"></text>
+            </view>
+        </picker>
+        </view>
+        <view class="sim-form-group">
+        <label>到达城市</label>
+        <picker bindchange="bindDestCityChange" value="{{index}}" range="{{city}}">
+            <view class="picker">
+            <text wx:if="{{postData.destCity}}">{{postData.destCity}}</text>
+            <text wx:else>请选择</text>
+            <text class="sim-arrow-bottom"></text>
+            </view>
+        </picker>
+        </view>
+        <view class="sim-form-group">
+        <label>出发时间</label>
+        <picker mode="date" bindchange='bindDateChange' value="{{postData.departureTime}}" >
+            <view class="picker">
+            <text wx:if="{{postData.departureTime}}">{{postData.departureTime}}</text>
+            <text wx:else>请选择出发时间</text>
+            <text class="sim-arrow-bottom"></text>
+            </view>
+        </picker>
+        </view>
+        <view class="sim-form-textarea">
+        <label>备注</label>
+        <textarea  bindinput="bindContentChange" maxlength="250" placeholder="如：你对司乘的需求，目的地之类的备注信息" value='{{postData.content}}'></textarea>
+        </view>
+        <view class="sim-row" style='height:100px;'>
+            <text>上传图片</text>
+            <image bindtap="uploadImg" src='{{img}}' class='upload_img'></image>
+        </view>
+    </view>
+    <view>
+        <button bindtap="submitCarpool" class="sim-btn sim-btn-success">提交</button>
+    </view>
+</view>

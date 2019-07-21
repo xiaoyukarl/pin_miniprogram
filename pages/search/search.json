@@ -1,0 +1,6 @@
+{
+    "usingComponents": {},
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 30,
+    "navigationBarTitleText": "搜索"
+}

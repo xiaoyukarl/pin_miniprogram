@@ -1,0 +1,20 @@
+<view class="container">
+    <button class="sim-btn-inline color-warning" style='width:100%;margin-top:20px;' wx:if="{{canIUse && !userInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <view wx:if="{{userInfo}}">
+        <view class="sim-row" bindtap="bindEditTab">
+            <view class="sim-nav-item" >
+                <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+                <text>{{userInfo.username}}</text>
+            </view> 
+            <text class="fa fa-angle-right"></text>
+        </view>
+        <view class="sim-row" bindtap="bindOrderTab">
+            <text>我的发布</text>
+            <text class="fa fa-angle-right"></text>
+        </view>
+        <view class="sim-row" bindtap="bindCollectTab">
+            <text>我的收藏</text>
+            <text class="fa fa-angle-right"></text>
+        </view>
+    </view>
+</view>

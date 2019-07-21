@@ -1,0 +1,63 @@
+<view class="container">
+    <view wx:if="{{detail.imgUrl}}">
+        <image src="{{detail.imgUrl}}" style='width:100%' lazy-load="true" mode="aspectFill"></image>
+    </view>
+    <view style="height:1px"></view>
+    <view class="sim-list">
+        <view class="sim-list-item">
+            <label class="sim-label color-success" wx:if="{{detail.type == 1}}">找车</label>
+            <label class="sim-label color-info" wx:if="{{detail.type == 2}}">找人</label>
+            <text>{{detail.title}}</text>
+        </view>
+        <view class="sim-list-item">
+            <text>出发城市</text>
+            <text class="text-gray">{{detail.starCity}}</text>
+        </view>
+        <view class="sim-list-item">
+            <text>到达城市</text>
+            <text class="text-gray">{{detail.destCity}}</text>
+        </view>
+        <view class="sim-list-item">
+            <text>出发时间</text>
+            <text class="text-gray">{{detail.departureTime}}</text>
+        </view>
+        <view class="sim-list-item">
+            <text>联系方式</text>
+            <text class="text-gray">{{detail.telephone}}</text>
+        </view>
+    </view>
+
+    <view class="sim-row">
+        <view class="sim-nav-item">
+            <image class="avatar" src="{{detail.avatarUrl}}"></image>
+        </view> 
+        <text class="text-gray">{{detail.username}}</text>
+    </view>
+
+  <view class="sim-list-media">
+    <view class="sim-list-item">
+      <view>
+        <view>
+          <text class="text-h6">备注</text>
+          <text class="text-gray">{{detail.content}}</text>
+        </view>
+      </view>      
+    </view>
+  </view>
+
+
+    <view class="sim-cart-nav">
+        <view></view>
+        <view class='color-info' bindtap='bindCollectTag'>
+            <text wx:if="{{isCollect == 1}}">
+                <text class="fa fa-heart"></text>
+                <text>已收藏</text>
+            </text>
+            <text wx:else>
+                <text class="fa fa-heart-o"></text>
+                <text>收藏</text>
+            </text>
+        </view>
+    </view>
+
+</view>
